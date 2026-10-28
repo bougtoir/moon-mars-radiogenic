@@ -1,0 +1,22 @@
+planet,domain,variable,raw_dataset,direction,transform,normalization,coverage,role,justification,primary_or_sensitivity
+Moon,SOURCE,U_ppm,LP GRS elem. abundance 5deg,higher=more source,identity,percentile rank,global,"S; Model A","Direct U abundance; dominant radiogenic heat/prospectivity signal",primary
+Moon,SOURCE,Th_ppm,LP GRS 5deg,higher=more source,identity,percentile rank,global,context,"Th tracks KREEP differentiation",sensitivity
+Moon,SOURCE,K_ppm,LP GRS 5deg,higher=more source,identity,percentile rank,global,context,"Incompatible-element enrichment context",sensitivity
+Moon,MOBILIZATION,FeO,LP GRS 5deg,higher=more mare basalt,identity,percentile rank,global,M,"Mare basalt fraction = magmatic differentiation proxy",primary
+Moon,MOBILIZATION,TiO2,LP GRS 5deg,higher=more mare basalt,identity,percentile rank,global,M,"Basalt Ti grade = differentiation proxy",primary
+Moon,MOBILIZATION,frac_volcanic,USGS Unified Geologic Map v2,higher=more volcanic unit area,identity,percentile rank,global,M,"Volcanic/mare/dome/dark-mantle unit fraction",primary
+Moon,EXPOSURE/TRAP,frac_basin,USGS Geol. Map,higher=more basin material,identity,percentile rank,global,T,"Basin excavation/ejecta exposes deep differentiated crust",primary
+Moon,EXPOSURE/TRAP,frac_crater,USGS Geol. Map,higher=more crater material,identity,percentile rank,global,T,"Crater excavation proxy",primary
+Moon,ACCESSIBILITY,slope_deg,LOLA LDSM_16 GDR,lower=more accessible,negate,percentile rank,global,A,"240-m baseline slope",primary
+Moon,ACCESSIBILITY,rough_m,LOLA LDRM_16 GDR,lower=more accessible,negate,percentile rank,global,A,"Meter-scale roughness",primary
+Mars,SOURCE,Th_ppm,ODY GRS th_5x5,higher=more source,identity,percentile rank,95.2% (high-lat masked),"S; Model A","Th = radiogenic source tracer; no U map exists",primary
+Mars,SOURCE,K_ppm,ODY GRS k_5x5,higher=more source,identity,percentile rank,95.2%,context,"Incompatible-element context; aqueous-fractionation sensitivity",sensitivity
+Mars,MOBILIZATION,frac_sed,USGS SIM3292,higher=more reworked,sum of basin+lowland+transition+mantle fractions,percentile rank,global,M,"Sedimentary/depositional reworking evidence",primary
+Mars,MOBILIZATION,lake_den,Goudge et al. 2016 OBL/CBL catalog,higher=more lakes,per-cell count / area,percentile rank,catalog complete (positive-only counts as observed),M,"Paleolake evidence of aqueous transport",primary
+Mars,MOBILIZATION,h2o_pct,ODY GRS h2o_sr_5x5,higher=more shallow H,identity,percentile rank,95.2%,M,"Water-equivalent hydrogen = present-day near-surface hydrogen (hydrologic context only; NOT direct evidence of ancient aqueous alteration — see docs/MARS_H2O_PROXY_AUDIT.md)",primary
+Mars,MOBILIZATION,frac_volcanic,USGS SIM3292,higher=more volcanic area,identity,percentile rank,global,M,"Volcanic/hydrothermal setting proxy",primary
+Mars,TRAP,frac_sed*geo_age,USGS SIM3292,higher=more favorable,product,percentile rank,global,T,"Ancient sedimentary accommodation compatible with trapping+preservation",primary
+Mars,TRAP,geo_age,USGS SIM3292,higher=older (preserved),era score map,percentile rank,global,T,"Noachian units = long preservation window",primary
+Mars,ACCESSIBILITY,slope_deg,MOLA/HRSC blend DEM (200m),lower=more accessible,negate,percentile rank,global,A,"0.5deg-gradient slope",primary
+Mars,ACCESSIBILITY,rough_m,MOLA/HRSC blend DEM,lower=more accessible,negate,percentile rank,global,A,"within-cell elevation std",primary
+Mars,ACCESSIBILITY,|elev|,MOLA/HRSC blend DEM,lower=more accessible,negate abs,percentile rank,global,A,"Extreme elevations penalized",primary

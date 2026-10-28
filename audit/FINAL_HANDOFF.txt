@@ -1,0 +1,43 @@
+FINAL_HANDOFF — moon-mars-radiogenic (PSS submission #3)
+Date: 2026-10-28 UTC
+
+1. Manuscript: manuscript/manuscript_final_clean.docx (30 pp when rendered)
+   + manuscript/manuscript_inline_figures.docx (figures embedded for review).
+2. Supplement: none — fully integrated (see audit/SUPPLEMENT_INTEGRATION_AUDIT.md).
+3. Appendix A inside the manuscript carries the complete robustness battery
+   (Table A1, Figure A1).
+4. Figures (submit as separate files per journal norms): figures/fig1-fig7 + figA1.
+5. Tables: tables/table1-5 + tableA1 CSVs; docx tables already formatted.
+6. Canonical numbers: Moon n=1790 rho=0.967 GRSens=0.033; Mars n=2468
+   rho=0.889 GRSens=0.111; ISRU decile shift 63%/39%; Moon 89-cell PKT region;
+   Mars 4 regions (56/32/4/3 cells).
+7. Negative results retained: bottleneck J5~0.04 (Moon); Mars leave-S-out
+   rho=0.169; WEH exclusion rho 0.839 / J5 0.554.
+8. Audits in audit/: PUBLIC_CODE_REPRODUCTION, FINAL_HARDCODE_AUDIT,
+   REFERENCE_VERIFICATION, REFERENCE_STYLE_AUDIT, FIGURE_TABLE_CITATION_AUDIT,
+   DATA_TEXT_FIGURE_CONSISTENCY, WORD_OMML_AUDIT, DOCUMENT_MARKUP_AUDIT,
+   WORD_LAYOUT_AUDIT, SUPPLEMENT_INTEGRATION_AUDIT, FINAL_HOSTILE_REVIEW,
+   FINAL_QC_REPORT.
+9. Public repo: bougtoir/moon-mars-radiogenic — synced via
+   devin/moon-mars-radiogenic-sync (code+metadata only; manuscript excluded).
+10. Data ledger: metadata/DATA_ACQUISITION.md (URLs); manifest hashes valid
+    except 6 server-regenerated ODY files (values verified identical).
+11. Known immaterial nondeterminism: 2/39 J5 values shift <=0.014 across
+    platforms (top-5% boundary ties); documented in PUBLIC_CODE_REPRODUCTION.
+12. Code fix made during audit: 03_models.py robust_eval double-append bug
+    (78-row CSV -> 39); results file was already correct.
+13. Manuscript fixes during audit: 6 uncited refs cited; Fig-3f citation
+    moved to preserve numeric order; 3 hardcoded result literals converted
+    to computed f-strings.
+14. Cover letter: submission/cover_letter.md (HIGH-ENERGY version, retained).
+15. Do NOT include in zip: data_raw, stale manuscript_*.docx (old files),
+    logs, data_interim, data_processed.
+16. Status: SUBMISSION READY (all 23 QC items PASS; hostile verdict SUBMIT).
+17. Author: Tatsuki Onishi (bougtoir@gmail.com); repo bougtoir/wip,
+    dir moon-mars-radiogenic.
+18. Provenance: canonical commit bed88c192 + post-audit commits on branch
+    devin/1791520661-moon-mars-supplement-integration.
+19. To rebuild: python3 scripts/01..08 in order after restoring data_raw
+    per metadata/DATA_ACQUISITION.md.
+20. J5 tie-break values in canonical CSV retained (platform-canonical).
+21. No pending blockers.
